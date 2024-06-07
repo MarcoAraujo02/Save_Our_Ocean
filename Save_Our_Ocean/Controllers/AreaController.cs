@@ -63,6 +63,17 @@ namespace Save_Our_Ocean.Controllers
             return View("~/Views/Voluntario/Home.cshtml");
         }
 
+        public async Task<IActionResult> ListaDeAreaLimpas()
+        {
+            // Recupere os dados das tabelas de área e eventos
+            var areas = await _dataContext.Area.ToListAsync();
+
+
+
+            return View(areas);
+        }
+
+
 
 
         public async Task<IActionResult> ListaDeArea()

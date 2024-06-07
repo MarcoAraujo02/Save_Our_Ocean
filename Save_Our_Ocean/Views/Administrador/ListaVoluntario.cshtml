@@ -12,7 +12,11 @@
 
 
 <body>
-
+    <br /><br />
+    <div class="logo">
+     
+        <a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+    </div>
 
     <div class="btn-link-flash" role="alert" align="center">
     </div>
@@ -26,7 +30,7 @@
 
         <tr bgcolor="grey" align="center">
             <th width="100">Nome</th>
-            <th width="100">Email</th>
+            <th width="100">Em31ail</th>
             <th width="100">Senha</th>
             <th width="100">Sexo</th>
             <th width="100">Editar</th>
@@ -44,8 +48,8 @@
                     <td>@voluntario.Senha</td>
                     <td>@voluntario.sexo</td>
                     <td>
-                        <a asp-controller="" asp-action="" asp-route-id="@voluntario.Id">Editar</a>
-                        <a asp-controller="" asp-action="" asp-route-id="@voluntario.Id">Deletar</a>
+                        <a asp-controller="Administrador" asp-action="EditarPage" asp-route-id="@voluntario.Id">Editar</a>
+                        <a asp-controller="Administrador" asp-action="DeletarVoluntario" asp-route-id="@voluntario.Id">Deletar</a>
                     </td>
                 </tr>
             }

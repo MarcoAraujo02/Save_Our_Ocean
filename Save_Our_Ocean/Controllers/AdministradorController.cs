@@ -62,6 +62,18 @@ namespace Save_Our_Ocean.Controllers
         }
 
 
+        public IActionResult LimparArea(int Areaid)
+        {
+            var area = _dataContext.Area.FirstOrDefault(e => e.Id == Areaid);
+
+            if (area != null)
+            {
+                area.Status = "Limpa";
+                _dataContext.SaveChanges();
+            }
+
+            return View("~/Views/Administrador/Home.cshtml");
+        }
 
         public async Task<IActionResult> ListaDeAreaLimpar()
         {
@@ -73,6 +85,7 @@ namespace Save_Our_Ocean.Controllers
             return View(areas);
         }
 
+
         public async Task<IActionResult> ListaVoluntario()
         {
             // Recupere os dados das tabelas de área e eventos
@@ -82,6 +95,42 @@ namespace Save_Our_Ocean.Controllers
 
             return View(voluntarios);
         }
+
+
+        public async Task<IActionResult> EditarPage(int id)
+        {
+
+            var Area = await _dataContext.Voluntario.FindAsync(id);
+            return View(Area);
+        }
+
+
+        public IActionResult EditarVoluntario(int id, CadastrarVoluntarioDTO request)
+        {
+            var vol = _dataContext.Voluntario.Find(id);
+
+            vol.Nome = request.Nome;
+            vol.Email= request.Email;
+            vol.Senha = request.Senha;
+            vol.sexo = request.Sexo;
+
+            _dataContext.Update(vol);
+            _dataContext.SaveChanges();
+
+            return RedirectToAction("ListaVoluntario", "Administrador");
+        }
+
+
+
+        public IActionResult DeletarVoluntario(int id)
+        {
+            var vol = _dataContext.Voluntario.Find(id);
+
+            _dataContext.Remove(vol);
+            _dataContext.SaveChanges();
+            return RedirectToAction("ListaVoluntario");
+        }
+
 
     }
 }

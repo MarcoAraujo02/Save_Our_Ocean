@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Tabela.css" rel="stylesheet" type="text/css" />
+    
 
 </head>
 <body>
     <br />
     <br />
+    <div class="logo">
+
+        <a class="btn" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+    </div>
     <br />
     <br />
-    <br />>
 
     <h1 class="titulo">Selecione a area de acesso</h1>
 
@@ -28,7 +33,7 @@
         </button>
         <br />
         <button class="item">
-            <a class="button-text" asp-controller="Administrador" asp-action="ListaDeAreaLimpar">Lista De Areas que foram Limpas</a>
+            <a class="button-text" asp-controller="Area" asp-action="ListaDeAreaLimpas">Lista De Areas que foram Limpas</a>
         </button>
      
     </div>

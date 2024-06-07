@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <link href="~/css/Cadastro.css" rel="stylesheet" type="text/css" />
+    <style>
+        /* Seletor para o campo de data */
+        input[type="date"] {
+            /* Define a cor do texto */
+            color: #808080; /* Aqui você pode especificar a cor que deseja, por exemplo, branco (#fff) */
+            /* Define outras propriedades, como fonte, tamanho, etc., se desejar */
+        }
+    </style>
+</head>
+<body>
+
+    @model Save_Our_Ocean.Models.Voluntario
+
+    <form asp-controller="Administrador" asp-action="EditarVoluntario" method="post">
+        <div class="agrupamento">
+            <h1 class="titulo">Editar dados do Voluntario</h1>
+        </div>
+
+        <div class="agrupamento-input">
+
+            <input class="inputs" name="Nome" type="text" id="exampleInputPassword1" required placeholder="Nome" asp-for="Nome">
+            <br />
+
+            <input class="inputs" name="Email" type="text" id="exampleInputPassword1" required placeholder="Email" asp-for="Email">
+
+            <br />
+            <input class="inputs" name="Sexo" type="text" id="exampleInputPassword1" required placeholder="Sexo" asp-for="sexo">
+
+            <br />
+            <input class="inputs" name="Senha" type="text" id="exampleInputPassword1" required placeholder="Senha" asp-for="Senha">
+
+            <input type="hidden" name="Id" value="@Model.Id">
+        </div>
+
+
+        <div class="agrupamento-links">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <br />
+            <br />
+        </div>
+
+    </form>
+</body>
+</html>

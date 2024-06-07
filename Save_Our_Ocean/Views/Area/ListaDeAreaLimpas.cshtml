@@ -34,7 +34,7 @@
             <th width="100">Tipo Poluicao</th>
             <th width="100">Descricasdao</th>
             <th width="100">Status</th>
-            <th width="100">Mudar Status</th>
+       
 
 
 
@@ -43,17 +43,17 @@
         <tbody>
             @foreach (var Area in Model)
             {
-                if (Area != null && Area.Status == "Sujo")
+                @if (Area != null && Area.Status == "Limpa")
                 {
                     <tr bgcolor="lightgrey" align="center">
                         <td>@Area.Cep</td>
                         <td>@Area.TipoPoluicao</td>
                         <td>@Area.Descricao</td>
                         <td>@Area.Status</td>
-                        <td><a asp-controller="Administrador" asp-action="LimparArea" asp-route-AreaId="@Area.Id">Limpar</a></td>
+                    
                     </tr>
                 }
-             
+
             }
 
 

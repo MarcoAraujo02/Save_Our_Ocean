@@ -12,7 +12,12 @@
 
 
 <body>
+    <br />
+    <br />
+    <div class="logo">
 
+        <a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+    </div>
 
     <div class="btn-link-flash" role="alert" align="center">
     </div>
@@ -27,8 +32,9 @@
         <tr bgcolor="grey" align="center">
             <th width="100">Cep</th>
             <th width="100">Tipo Poluicao</th>
-            <th width="100">Descricao</th>
+            <th width="100">Descricasdao</th>
             <th width="100">Status</th>
+            <th width="100">Mudar Status</th>
 
 
 
@@ -37,12 +43,16 @@
         <tbody>
             @foreach (var Area in Model)
             {
-                <tr bgcolor="lightgrey" align="center">
-                    <td>@Area.Cep</td>
-                    <td>@Area.TipoPoluicao</td>
-                    <td>@Area.Descricao</td>
-                    <td>@Area.Status</td>          
-                </tr>
+                if (Area != null && Area.Status == "Limpa")
+                {
+                    <tr bgcolor="lightgrey" align="center">
+                        <td>@Area.Cep</td>
+                        <td>@Area.TipoPoluicao</td>
+                        <td>@Area.Descricao</td>
+                        <td>@Area.Status</td>
+                    </tr>
+                }
+
             }
 
 
