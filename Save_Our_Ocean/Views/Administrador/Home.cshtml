@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />>
+
+    <h1 class="titulo">Selecione a area de acesso</h1>
+
+    <div class="agrupamento">
+        <button class="item">
+            <a class="button-text" asp-controller="Administrador" asp-action="ListaVoluntario">Editar Voluntario</a>
+        </button>
+        <br />
+        <button class="item">
+            <a class="button-text" asp-controller="Administrador" asp-action="ListaDeAreaLimpar">Atualizar Area</a>
+        </button>
+        <br />
+        <button class="item">
+            <a class="button-text" asp-controller="Administrador" asp-action="ListaDeAreaLimpar">Lista De Areas que foram Limpas</a>
+        </button>
+     
+    </div>
+</body>
+</html>
+
+

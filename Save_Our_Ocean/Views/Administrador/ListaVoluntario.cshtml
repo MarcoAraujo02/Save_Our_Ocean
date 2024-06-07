@@ -1,0 +1,59 @@
+﻿    @model List< Save_Our_Ocean.Models.Voluntario>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/listacl.css" rel="stylesheet">
+    <link href="/static/css/botao.css" rel="stylesheet">
+    <link href="~/css/Tabela.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<body>
+
+
+    <div class="btn-link-flash" role="alert" align="center">
+    </div>
+
+    <h1 class="titulo">Lista de voluntarios</h1>
+
+
+    <br />
+    <br />
+    <table class="tabela" bgcolor="black" width="800">
+
+        <tr bgcolor="grey" align="center">
+            <th width="100">Nome</th>
+            <th width="100">Email</th>
+            <th width="100">Senha</th>
+            <th width="100">Sexo</th>
+            <th width="100">Editar</th>
+
+
+
+
+        </tr>
+        <tbody>
+            @foreach (var voluntario in Model)
+            {
+                <tr bgcolor="lightgrey" align="center">
+                    <td>@voluntario.Nome</td>
+                    <td>@voluntario.Email</td>
+                    <td>@voluntario.Senha</td>
+                    <td>@voluntario.sexo</td>
+                    <td>
+                        <a asp-controller="" asp-action="" asp-route-id="@voluntario.Id">Editar</a>
+                        <a asp-controller="" asp-action="" asp-route-id="@voluntario.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>

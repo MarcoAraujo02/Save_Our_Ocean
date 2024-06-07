@@ -1,0 +1,54 @@
+﻿    @model List< Save_Our_Ocean.Models.Area>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/listacl.css" rel="stylesheet">
+    <link href="/static/css/botao.css" rel="stylesheet">
+    <link href="~/css/Tabela.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<body>
+
+
+    <div class="btn-link-flash" role="alert" align="center">
+    </div>
+
+    <h1 class="titulo">Lista de Areas</h1>
+
+
+    <br />
+    <br />
+    <table class="tabela" bgcolor="black" width="800">
+
+        <tr bgcolor="grey" align="center">
+            <th width="100">Cep</th>
+            <th width="100">Tipo Poluicao</th>
+            <th width="100">Descricao</th>
+            <th width="100">Status</th>
+
+
+
+
+        </tr>
+        <tbody>
+            @foreach (var Area in Model)
+            {
+                <tr bgcolor="lightgrey" align="center">
+                    <td>@Area.Cep</td>
+                    <td>@Area.TipoPoluicao</td>
+                    <td>@Area.Descricao</td>
+                    <td>@Area.Status</td>          
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <link href="~/css/Login.css" rel="stylesheet" type="text/css" />
+    <style>
+        .imagem {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form asp-controller="Administrador" asp-action="Logar" method="post">
+
+        <div class="agrupamento">
+            <h1 class="titulo">Save Our Ocean</h1>
+       
+        </div>
+
+        <br />
+        <br />
+
+
+        <div class="agrupamento-input">
+
+            <input class="inputs" name="Nome" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Nome">
+
+            <br />
+            <input class="inputs" name="Senha" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Senha">
+
+        </div>
+
+        <br />
+        <br />
+
+        <div class="agrupamento-links">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br />
+            <br />
+        </div>
+
+
+    </form>
+</body>
+</html>
+
